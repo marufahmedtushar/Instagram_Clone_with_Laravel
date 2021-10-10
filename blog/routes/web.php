@@ -18,6 +18,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::get('/', 'IndexController@index');
+
+
+Route::group(['middleware' => ['auth','user']],function() {
 Route::get('/profile', 'IndexController@profile');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/editprofile', 'IndexController@profileedit');
+Route::put('/profileupdate/{id}', 'IndexController@profileinfosave');
+});
