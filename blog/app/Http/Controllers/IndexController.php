@@ -40,6 +40,8 @@ class IndexController extends Controller
             $path = $request->file('profileimg')->storeAs('public/cover_images',$profileimgNameToStore);
 
 
+        }else{
+            $profileimgNameToStore = 'noimage.jpg';
         }
         
 

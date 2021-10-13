@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="container">
+<div class="container content">
   
   @foreach($users as $user)
   @if(Auth::user()->name == $user->name)
@@ -32,16 +32,16 @@
 <div class="container cntr" style="" >
   <div class="postnav">
     <ul class="postnavul nav" id="pills-tab" role="tablist">
-      <li class="nav-item">
+      <li class="nav-item navstyle">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><img src="images/gg.png">POSTS</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item navstyle">
         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img src="images/ig.png">IGTV</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item navstyle">
         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><img src="images/save.png">SAVED</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item navstyle">
         <a class="nav-link" id="pills-tagged-tab" data-toggle="pill" href="#pills-tagged" role="tab" aria-controls="pills-tagged" aria-selected="false"><img src="images/tg.png">TAGGED</a>
       </li>
     </ul>

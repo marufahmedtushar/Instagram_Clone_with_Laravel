@@ -35,9 +35,7 @@
 	color: #000000;
 }
 
-.row .col-md-6 span { 
-    text-align:justify; 
-} 
+
 
 
 
@@ -108,7 +106,7 @@
 
 
 
-.container{
+.content{
 	display: flex;
 	justify-content: space-between;
 	padding: 0 5%;
@@ -594,6 +592,7 @@ display: flex;
 	display:block;
     margin:0px auto 0px auto;
 }
+
 .postnavul{
   display: inline-block;
   text-align: center;
@@ -619,10 +618,10 @@ display: flex;
 	display: block;
 
 }
-.nav-item{
+.navstyle {
 	padding: 0 !important;
 }
-.active{
+.postnav .active{
 	background-color: #ffffff !important ;
 	color: #000000 !important;
 	font-weight: bold;
@@ -687,6 +686,36 @@ display: flex;
     background-color: #ffffff;
     color: #000000; /* This doesn't... why? */
 }
+.nav{
+	display: inline-block;
+	border-color: none !important;
+}
+.nav-link.active{
+    
+
+}
+.form{
+		display: grid;
+		grid-template-columns:190px 650px 0px  0px; ;
+}
+.formul .active{
+	color: #495057;
+    background-color: #fff;
+    border-color: #fff !important;
+}
+.formul .nav-link:hover{
+	border-color: #fff !important;
+}
+.content-tab{
+
+}
+
+.form-div .labelform{
+	display: inline-block;
+}
+.form-div .form-control{
+	align-items: center;
+}
 @media (max-width: 500px) {
 	
 	.nav-wrapper .search-box{
@@ -702,7 +731,7 @@ display: flex;
 		display: inline-block;
 		margin-top: -33px;
 	}
-	.container .right-bar{
+	.content .right-bar{
 		display: none;
 	}
 
@@ -715,7 +744,7 @@ display: flex;
 
 	}
 
-	.container{
+	.content{
 		margin-top: 52px;
 		padding:0 5px 0 5px;
 		overflow: hidden;
@@ -796,6 +825,8 @@ display: flex;
 		grid-template-columns: 100px 120px 115px  0px;
 
 	}
+
+
 
 	
 	.tabimg img{
