@@ -62,6 +62,27 @@
             <a href=""><img src='images/wallpaper3.jpg' ></a>
             <a href=""><img src='images/wallpaper.jpg' ></a>
           </span>
+          <span>
+            @foreach($posts as $post)
+            @if(Auth::user()->id == $post->user->id)
+            <a href="" data-toggle="modal" data-target="#exampleModal"><img src="/storage/cover_images/{{$post->post_image}}" ></a>
+            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
+          <div class="modal-body modalelements">
+            <div class="modalimg">
+              <img src="/storage/cover_images/{{$post->post_image}}" style="height: 100%; width: 100%;">
+            </div>
+            <div class="modalimgcmt">{{$post->post_title}}</div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+            @endif
+            @endforeach
+          </span>
           
         </div>
         
@@ -119,18 +140,7 @@
         </div>
       </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content ">
-          <div class="modal-body modalelements">
-            <div class="modalimg"><img src='images/wallpaper.jpg' style="height: 100%; width: 100%;"></div>
-            <div class="modalimgcmt">ffffffffffff</div>
-            
-          </div>
-          
-        </div>
-      </div>
-    </div>
+    
   </div>
   
 </div>

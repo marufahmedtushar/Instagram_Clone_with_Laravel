@@ -696,7 +696,7 @@ display: flex;
 }
 .form{
 		display: grid;
-		grid-template-columns:190px 650px 0px  0px; ;
+		grid-template-columns:190px 885px 0px  0px; /*190px 650px 0px  0px; */
 }
 .formul .active{
 	color: #495057;
@@ -709,12 +709,32 @@ display: flex;
 .content-tab{
 
 }
+.form-div{
+	align-items: center;
+	display: grid;
+	grid-template-columns:100px 550px 0px  0px; 
+	
+}
 
 .form-div .labelform{
 	display: inline-block;
 }
 .form-div .form-control{
 	align-items: center;
+}
+.pcolor{
+	color: #E4E4E4;
+}
+.frompic{
+	height: 40px;
+	width: 40px;
+}
+.form ul li a{
+	color: #000000;
+}
+.formli .active{
+	color: #0F181D !important;
+	font-weight: bold !important;
 }
 @media (max-width: 500px) {
 	

@@ -8,7 +8,7 @@
     <div class="story-gallery">
       @foreach($users as $user)
       <div class="stories">
-        <img class="rounded-circle" src="images/wallpaper.jpg" >
+        <img class="rounded-circle" src="/storage/cover_images/{{$user->profileimg}}" >
         <div class="story-woner">
           <p>{{$user->name}}</p>
         </div>
@@ -172,18 +172,66 @@
                   </div> <!-- end Footer -->
                   
                   </div> <!-- end Insta -->
+                  @foreach($posts as $post)
+
+                  <div class= 'insta fade-scroll'>
+                <div class='top-insta'>
+                  <div class="top-insta-wrapper">
+                    <a href='' target='_blank'><img src="/storage/cover_images/{{$post->user->profileimg}}"></a>
+                    <a href='' target='_blank' class='user'>{{$post->user->username}}
+                    </a>
+                  </div>
+                  <div class="option">
+                    <span class= 'dot'><img src='images/dot1.png'data-toggle="modal" data-target="#exampleModalCenter"></span>
+                  </div>
+                </div>
+                <div class='post'>
                   
+                  <img src="/storage/cover_images/{{$post->post_image}}" >
+                </div>
+                <div class='footer'>
+                  
+                  <div class='react'>
+                    <a href='#' role='button'><span class='love'><img src="images/f.png" class="icon"></span></a>
+                    <a href='#' role='button'><span class='comment'><img src="images/cmt.png" class="icon"></span></a>
+                    <a href='#' role='button'><span class='love'><img src="images/im.png" class="icon"></span></a>
+                    
+                    <a href='#' role='button'><span class='save'><img src="images/save.png" class="icon"></span></a>
+                    
+                  </div>
+                  
+                  <div class='caption'>
+                    <span class="react-like"><a href="">23,330 likes</a></span>
+                    <a href='#'>{{$post->user->username}}</a><span id="lmt">{{$post->post_title}}</span>
+                    <div class="commentviwer">
+                      <span class="commentcounter"><a href="">View all 807 comments</a></span>
+                      <span class="viwercmt"><a href="">uncle_oreo</a>Lorem ipsum dolor sit amet</span>
+                      <span class="posttimer">{{$post->created_at}}</span>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class='comment-section'>
+                    <input type='text' id='cmnt' placeholder='Add a comment...'>
+                    <span class='dot02'></span>
+                  </div>
+                  
+                  </div> <!-- end Footer -->
+                  
+                  </div> <!-- end Insta -->
+                  @endforeach
                   </section> <!-- end section -->
                 </div>
                 <div class="right-bar ">
                   <div class="sidebar">
-                    <img class="rounded-circle" src="images/wallpaper.jpg" >
+                    @guest
+                    @else
+                    <img class="rounded-circle" src="/storage/cover_images/{{Auth::user()->profileimg}}" >
                     <div class="title">
-                       @guest
-                        @else
+                      
                       <a href="/profile">{{ str_replace(' ', '', Auth::user()->name ) }}</a>
                       <h6>{{ Auth::user()->name }}</h6>
-                       @endguest
+                      
                     </div>
                     <div class="switch">
                       <a href="">Switch</a>
@@ -195,70 +243,44 @@
                     <h4>Suggestions for you</h4>
                     <a href="">See all</a>
                   </div>
+                  @foreach($users as $user)
+                  @if(Auth::user()->id != $user->id)
                   <div class="suggested-item">
-                    <img class="rounded-circle" src="images/wallpaper.jpg" >
+                    <img class="rounded-circle" src="/storage/cover_images/{{$user->profileimg}}" >
                     
                     <div class="sg-title">
-                      <a href="">marufahmedtushar</a>
-                      <h6>marufahmedtushar</h6>
+                      <a href="">{{$user->username}}</a>
+                      <h6>Suggested for you</h6>
                     </div>
                     <div class="sg-follow">
                       <a href="">Follow</a>
                     </div>
                   </div>
-                  <div class="suggested-item">
-                    <img class="rounded-circle" src="images/wallpaper.jpg" >
-                    
-                    <div class="sg-title">
-                      <a href="">marufahmedtushar</a>
-                      <h6>marufahmedtushar</h6>
-                    </div>
-                    <div class="sg-follow">
-                      <a href="">Follow</a>
-                    </div>
-                  </div>
-                  <div class="suggested-item">
-                    <img class="rounded-circle" src="images/wallpaper.jpg" >
-                    
-                    <div class="sg-title">
-                      <a href="">marufahmedtushar</a>
-                      <h6>marufahmedtushar</h6>
-                    </div>
-                    <div class="sg-follow">
-                      <a href="">Follow</a>
-                    </div>
-                  </div>  <div class="suggested-item">
-                  <img class="rounded-circle" src="images/wallpaper.jpg" >
+                  @endif
+                  @endforeach
                   
-                  <div class="sg-title">
-                    <a href="">marufahmedtushar</a>
-                    <h6>marufahmedtushar</h6>
+                  @endguest
+                  <div class="ifooter">
+                    <div class="ifooter-item">
+                      <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Help</a></li>
+                        <li><a href="">Press</a></li>
+                        <li><a href="">API</a></li>
+                        <li><a href="">Jobs</a></li>
+                        <li><a href="">Privacy</a></li>
+                        <li><a href="">Terms</a></li>
+                        <li><a href="">Locations</a></li>
+                        <li><a href="">Top accounts</a></li>
+                        <li><a href="">Hashtags</a></li>
+                        <li><a href="">Language</a></li>
+                      </ul>
+                    </div>
+                    <div class="copyright">
+                      <span>© 2021 INSTAGRAM FROM FACEBOOK</span>
+                    </div>
+                    
                   </div>
-                  <div class="sg-follow">
-                    <a href="">Follow</a>
-                  </div>
-                </div>
-                <div class="ifooter">
-                  <div class="ifooter-item">
-                    <ul>
-                      <li><a href="">About</a></li>
-                      <li><a href="">Help</a></li>
-                      <li><a href="">Press</a></li>
-                      <li><a href="">API</a></li>
-                      <li><a href="">Jobs</a></li>
-                      <li><a href="">Privacy</a></li>
-                      <li><a href="">Terms</a></li>
-                      <li><a href="">Locations</a></li>
-                      <li><a href="">Top accounts</a></li>
-                      <li><a href="">Hashtags</a></li>
-                      <li><a href="">Language</a></li>
-                    </ul>
-                  </div>
-                  <div class="copyright">
-                    <span>© 2021 INSTAGRAM FROM FACEBOOK</span>
-                  </div>
-                  
                 </div>
               </div>
-            </div>
-            @endsection
+              @endsection

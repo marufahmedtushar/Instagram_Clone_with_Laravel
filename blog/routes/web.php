@@ -25,5 +25,7 @@ Route::get('/', 'IndexController@index');
 Route::group(['middleware' => ['auth','user']],function() {
 Route::get('/profile', 'IndexController@profile');
 Route::get('/editprofile', 'IndexController@profileedit');
+Route::put('/profilepicupdate/{id}', 'IndexController@profilepicupdate');
 Route::put('/profileupdate/{id}', 'IndexController@profileinfosave');
+Route::put('/postscreate','IndexController@postcreate');
 });
