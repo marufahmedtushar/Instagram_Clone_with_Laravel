@@ -2,8 +2,7 @@
 @section('content')
 <div class="container content">
   
-  @foreach($users as $user)
-  @if(Auth::user()->name == $user->name)
+
   <div class="profilecontent">
     <div class="imagecontent">
       <img class="rounded-circle" src="/storage/cover_images/{{$user->profileimg}}" >
@@ -25,7 +24,7 @@
       </div>
     </div>
     
-    
+   
   </div>
   
 </div>
@@ -35,12 +34,7 @@
       <li class="nav-item navstyle">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><img src="images/gg.png">POSTS</a>
       </li>
-      <li class="nav-item navstyle">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img src="images/ig.png">IGTV</a>
-      </li>
-      <li class="nav-item navstyle">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><img src="images/save.png">SAVED</a>
-      </li>
+      
       <li class="nav-item navstyle">
         <a class="nav-link" id="pills-tagged-tab" data-toggle="pill" href="#pills-tagged" role="tab" aria-controls="pills-tagged" aria-selected="false"><img src="images/tg.png">TAGGED</a>
       </li>
@@ -49,17 +43,28 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
         <div class="tabimg">
+         
           
           <span>
-            @foreach($posts as $post)
-            @if(Auth::user()->id == $post->user->id)
-            <a href="" data-toggle="modal" data-target="#exampleModal"><img src="/storage/cover_images/{{$post->post_image}}" ></a>
+             
+          @foreach($posts as $post)
+          
+
+        
+          
+          <a href="" data-toggle="modal" data-target="#exampleModal">
+            	<img src="/storage/cover_images/{{$post->post_image}}" ></a>
+         
+         
+            
             <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
           <div class="modal-body modalelements">
             <div class="modalimg">
-              <img src="/storage/cover_images/{{$post->post_image}}" style="height: 100%; width: 100%;">
+            
+            	
+              <img src="/storage/cover_images/{{$post->post_image}}" style="height: 50%; width: 50%;">
             </div>
             <div class="modalimgcmt">{{$post->post_title}}</div>
             
@@ -68,8 +73,10 @@
         </div>
       </div>
     </div>
-            @endif
-            @endforeach
+
+            
+          
+           @endforeach
           </span>
           
         </div>
@@ -132,8 +139,7 @@
   </div>
   
 </div>
-@endif
-@endforeach
+
 <footer class="footer" >
   <div class="footwraper" >
     
@@ -161,3 +167,4 @@
   </div>
 </footer>
 @endsection
+

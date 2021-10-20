@@ -28,4 +28,5 @@ Route::get('/editprofile', 'IndexController@profileedit');
 Route::put('/profilepicupdate/{id}', 'IndexController@profilepicupdate');
 Route::put('/profileupdate/{id}', 'IndexController@profileinfosave');
 Route::put('/postscreate','IndexController@postcreate');
+Route::get('/userprofile/{id}','IndexController@userprofile');
 });

@@ -104,5 +104,13 @@ class IndexController extends Controller
         return back()->with('status','post created');
     }
 
+     public function userprofile(Request $request,$id){
+        $user = User::findOrFail($id);
+        $posts = Post::all();
+        return view('userprofile')->with('user',$user)->with('posts',$posts);
+        // dd($user , $posts);
+
+    }
+
 
 }

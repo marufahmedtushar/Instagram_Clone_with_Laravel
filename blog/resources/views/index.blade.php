@@ -249,7 +249,7 @@
                     <img class="rounded-circle" src="/storage/cover_images/{{$user->profileimg}}" >
                     
                     <div class="sg-title">
-                      <a href="">{{$user->username}}</a>
+                      <a href="/userprofile/{{$user->id}}">{{$user->username}}</a>
                       <h6>Suggested for you</h6>
                     </div>
                     <div class="sg-follow">
