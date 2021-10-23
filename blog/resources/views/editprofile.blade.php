@@ -118,35 +118,27 @@
 		</div>
 		<div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 			<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</form>
+				<div class="form-group form-div ">
+					<a href="/profile"><img class="rounded-circle frompic" src="/storage/cover_images/{{$user->profileimg}}"></a>
+				</div>
+				<div class="form-group form-div ">
+					<label class="font-weight-bold labelform" >{{$user->username}}</label>
+					
+				</div>
+				<div class="form-group form-div">
+					<label class="font-weight-bold labelform">Old password</label>
+					<input type="text" name="bio"  class="form-control"  >
+				</div>
+				<div class="form-group form-div">
+					<label class="font-weight-bold labelform">New password</label>
+					<input type="text" name="bio"  class="form-control"  >
+				</div>
+				<div class="form-group form-div">
+					<label class="font-weight-bold labelform">Confirm new password</label>
+					<input type="text" name="bio"  class="form-control"  >
+				</div>
+				<button type="submit" class="btn btn-primary">Change Password</button>
+			</form>
 		</div>
 		<div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
 			<form class="" action="/postscreate" method="POST" enctype="multipart/form-data" >

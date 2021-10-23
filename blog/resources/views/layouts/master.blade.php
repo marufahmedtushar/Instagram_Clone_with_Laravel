@@ -12,30 +12,30 @@
   <body>
     <nav class="navbar">
       <div class="nav-wrapper">
-        <a href="/"><img src="images/ih.png" class="brand-img"></a>
+        <a href="/"><img src="{{asset('images/ih.png')}}" class="brand-img"></a>
         <input type="text" class="search-box" placeholder="Search">
       </div>
       <div class="nav-items">
         
-        <img src="images/ihome.png" class="icon">
-        <img src="images/im.png" class="icon">
-        <img src="images/iee.png" class="icon">
-        <img src="images/f.png" class="icon">
+        <img src="{{asset('images/ihome.png')}}" class="icon">
+        <img src="{{asset('images/im.png')}}" class="icon">
+        <img src="{{asset('images/iee.png')}}" class="icon">
+        <img src="{{asset('images/f.png')}}" class="icon">
         
         
         
         <div class="btn-group" role="group">
           @guest
-          <a href="" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/wallpaper.jpg" class="icon user-profile" ></a>
+          <a href="" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/wallpaper.jpg')}}" class="icon user-profile" ></a>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           @else
 
           <a href="" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class=" icon user-profile" src="/storage/cover_images/{{Auth::user()->profileimg}}"></a>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="/profile"><img src="images/profile.png" class="icon">Profile</a>
-            <a class="dropdown-item" href=""><img src="images/save.png" class="icon">Saved</a>
-            <a class="dropdown-item" href="/editprofile"><img src="images/st.png" class="icon">Setting</a>
-            <a class="dropdown-item" href=""><img src="images/sa.png" class="icon">Switch accounts</a>
+            <a class="dropdown-item" href="/profile"><img src="{{asset('images/profile.png')}}" class="icon">Profile</a>
+            <a class="dropdown-item" href=""><img src="{{asset('images/save.png')}}" class="icon">Saved</a>
+            <a class="dropdown-item" href="/editprofile"><img src="{{asset('images/st.png')}}" class="icon">Setting</a>
+            <a class="dropdown-item" href=""><img src="{{asset('images/sa.png')}}" class="icon">Switch accounts</a>
             <div style="border-top: #DEDBDC 1px solid;"></div>
 
           @endguest

@@ -318,7 +318,7 @@ display: flex;
 }
 
 
-.dot img{
+.dot img {
     cursor: pointer;
     height: 16px;
     width: 16px;
@@ -327,6 +327,7 @@ display: flex;
     text-align: right;
   
 }
+
 
 
 .modalstyle{
@@ -561,10 +562,17 @@ display: flex;
     font-size: 28px;
 }
 
-.profiletitle img{
+.profiletitleimg {
 	margin-left: 0;
 	height: 50px;
     width: 50px;
+    display: inline-block;
+}
+
+.dotimg{
+	margin: 20px;
+	height: 20px;
+    width: 20px;
     display: inline-block;
 }
 

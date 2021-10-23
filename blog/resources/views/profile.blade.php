@@ -12,7 +12,7 @@
       <div class="profiletitle">
         <a class="profiletitle_a" href="">{{ str_replace(' ', '', $user->name ) }}</a>
         <button class="profiletitle_b btn btn-secondary btn-sm"><a href="/editprofile">Edit Profile</a></button>
-        <a href="" class="setting"><img src="images/st.png" class="icon"></a>
+        <a href="" class="setting"><img src="images/st.png" class="profiletitleimg icon"></a>
       </div>
       <div class="postfollowercounter ">
         <span><h6>33 posts</h6></span>
