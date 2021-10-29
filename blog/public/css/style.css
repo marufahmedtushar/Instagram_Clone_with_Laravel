@@ -744,6 +744,53 @@ display: flex;
 	color: #0F181D !important;
 	font-weight: bold !important;
 }
+
+.modalimg img{
+	height: 100%;
+	width: 100%;
+}
+.postmodal{
+	display: grid;
+    grid-template-columns: 323px 44px 0px 0px ;
+}
+.postmodal-wrapper{
+	width:367px;
+	display: flex;
+	border-bottom: #DEDBDC 1px solid;
+}
+
+.postmodal-wrapper img{
+	width: 30px;
+    height: 30px;
+}
+.postmodal-option{
+	   display: flex;
+    justify-content: space-between;
+
+}
+.postmodalimg{
+	height:20px !important;
+	width: 20px !important;
+	padding: 0 !important;
+	margin-top: -38px;
+
+
+}
+
+.postmodal-title{
+	margin-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+}
+.postmodal-title:hover{
+	color: #000000;
+}
+
+.modalimgcmt{
+	font-size: 13px;
+    font-weight: 600;
+}
 @media (max-width: 500px) {
 	
 	.nav-wrapper .search-box{

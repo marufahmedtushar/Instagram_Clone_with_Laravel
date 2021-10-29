@@ -98,6 +98,19 @@ class IndexController extends Controller
 
         $post = new Post();
         $post-> user_id = Auth::id();
+
+         #Store Unique Order/Product Number
+        $unique_no = Post::orderBy('id', 'DESC')->pluck('id')->first();
+        if($unique_no == null or $unique_no == ""){
+        #If Table is Empty
+        $unique_no = 1;
+        }
+        else{
+        #If Table has Already some Data
+        $unique_no = $unique_no + 1;
+      }
+      
+        $post->post_no = 'POST-0'.$unique_no;
         $post->post_title = $request->input('post_title');
         $post->post_image = $fileNameToStore;
         $post->save();

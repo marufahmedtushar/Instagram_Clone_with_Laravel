@@ -16,7 +16,7 @@
 	
 	<ul class="nav nav-tabs formul" id="myTab" role="tablist" style="border-right: #DEDBDC 1px solid;">
 		<li class="nav-item formli" role="presentation">
-			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Edit Profile</a>
+			<a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Edit Profile</a>
 		</li>
 		<li class="nav-item formli" role="presentation">
 			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Change password</a>
