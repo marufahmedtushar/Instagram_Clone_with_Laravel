@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Post;
+use App\React;
 
 class IndexController extends Controller
 {
@@ -123,6 +124,32 @@ class IndexController extends Controller
         return view('userprofile')->with('user',$user)->with('posts',$posts);
         // dd($user , $posts);
 
+    }
+
+    public function react(Request $request){
+
+        
+
+
+        $react = new React();
+        $react-> user_id = Auth::id();
+        $react->post_id = $request->input('post_id');
+
+         #Store Unique Order/Product Number
+        $unique_no = React::orderBy('id', 'DESC')->pluck('id')->first();
+        if($unique_no == null or $unique_no == ""){
+        #If Table is Empty
+        $unique_no = 1;
+        }
+        else{
+        #If Table has Already some Data
+        $unique_no = $unique_no + 1;
+      }
+      
+        $react->react_no = 'REACT-0000'.$unique_no;
+        $react->react_value = $request->input('react_value');
+        $react->save();
+        return back()->with('status','you reacted');
     }
 
 

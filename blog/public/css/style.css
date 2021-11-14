@@ -367,7 +367,7 @@ display: flex;
 .react {
     margin-top: 4px;
     display: grid;
-    grid-template-columns: 44px 44px 466px 0px ;
+    grid-template-columns: 30px 44px 466px 0px ;
 
 }
 .react a {
@@ -381,7 +381,7 @@ display: flex;
 .react a:last-child {
     margin-right: 0
 }
-.react .love {
+.react .love, .wishChkBox {
     background-position: -408px -156px;
     height: 24px;
     width: 24px;
@@ -791,6 +791,22 @@ display: flex;
 	font-size: 13px;
     font-weight: 600;
 }
+
+
+  .wishChkBox  input[type='checkbox'] {
+    display:none;
+}
+ .wishChkBox   input[type='checkbox']+ label:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f004";
+	font-size:1.5rem;
+	cursor:pointer;
+ 
+ }
+ .wishChkBox  input[type='checkbox']:checked + label:before {
+     font-weight:600;
+ 
+ }
 @media (max-width: 500px) {
 	
 	.nav-wrapper .search-box{

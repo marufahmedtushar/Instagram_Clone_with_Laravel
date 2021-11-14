@@ -55,7 +55,11 @@
         <div class='footer'>
           
           <div class='react'>
-            <a href='#' role='button'><span class='love'><img src="images/f.png" class="icon"></span></a>
+            <div class="wishChkBox">
+              <input type="checkbox" id="wish1" name="wish1"  />
+              <label for="wish1"> </label>
+            </div>
+            <!--  <a href='#' role='button'><span class='love'><img src="images/f.png" class="icon"></span></a> -->
             <a href='#' role='button'><span class='comment'><img src="images/cmt.png" class="icon"></span></a>
             <a href='#' role='button'><span class='love'><img src="images/im.png" class="icon"></span></a>
             
@@ -100,8 +104,11 @@
             <div class='footer'>
               
               <div class='react'>
-                <a href='#' role='button'><span class='love'><img src="images/f.png" class="icon"></span></a>
-                <a href='#' role='button'><span class='comment'><img src="images/cmt.png" class="icon"></span></a>
+                <div class="wishChkBox">
+                  <input type="checkbox" id="wish1" name="wish1"  />
+                  <label for="wish1"> </label>
+                </div>
+                
                 <a href='#' role='button'><span class='love'><img src="images/im.png" class="icon"></span></a>
                 
                 <a href='#' role='button'><span class='save'><img src="images/save.png" class="icon"></span></a>
@@ -128,13 +135,13 @@
               
               </div> <!-- end Insta -->
               
-                  @foreach($posts as $post)
-
-                  <div class= 'insta fade-scroll'>
+              @foreach($posts as $post)
+              <div class= 'insta fade-scroll'>
                 <div class='top-insta'>
                   <div class="top-insta-wrapper">
                     <a href='' target='_blank'><img src="/storage/cover_images/{{$post->user->profileimg}}"></a>
-                    @if($post->user->id == Auth::user()->id )
+                    @guest
+                    @elseif($post->user->id == Auth::user()->id )
                     <a href='profile' target='_blank' class='user'>{{$post->user->username}}
                     </a>
                     
@@ -142,8 +149,7 @@
                     
                     <a href='/userprofile/{{$post->user->id}}' target='_blank' class='user'>{{$post->user->username}}
                     </a>
-                    @endif
-
+                    @endguest
                   </div>
                   <div class="option">
                     <span class= 'dot'><img src='images/dot1.png'data-toggle="modal" data-target="#exampleModalCenter"></span>
@@ -156,7 +162,26 @@
                 <div class='footer'>
                   
                   <div class='react'>
-                    <a href='#' role='button'><span class='love'><img src="images/f.png" class="icon"></span></a>
+                    <form action="/react" method="POST">
+                      {{ csrf_field() }}
+                      {{ method_field('PUT') }}
+                      
+                      <div class="wishChkBox">
+                        
+
+                         @if($post->react_value == 1)
+
+                        <input type="hidden" name="post_id" value="{{$post->id}}">
+                        <input type="checkbox" onChange="this.form.submit()" id="react_value{{$post->id}}" name="react_value" value="0" {{ $post->react_value == 1 ? 'checked' : '' }}/>
+                         @elseif($post->react_value == 0)
+
+                        <input type="hidden" name="post_id" value="{{$post->id}}">
+                        <input type="checkbox" id="react_value{{$post->id}}" name="react_value" value="1"    onChange="this.form.submit()" {{ $post->react_value == 0 ? '' : '' }}/>
+                         @endif
+
+                        <label for="react_value{{$post->id}}" > </label>
+                      </div>
+                    </form>
                     <a href='#' role='button'><span class='comment'><img src="images/cmt.png" class="icon"></span></a>
                     <a href='#' role='button'><span class='love'><img src="images/im.png" class="icon"></span></a>
                     
@@ -170,7 +195,7 @@
                     <div class="commentviwer">
                       <span class="commentcounter"><a href="">View all 807 comments</a></span>
                       <span class="viwercmt"><a href="">uncle_oreo</a>Lorem ipsum dolor sit amet</span>
-                      <span class="posttimer">{{$post->created_at}}</span>
+                      <span class="posttimer">{{$post->created_at->diffForHumans()}}</span>
                     </div>
                     
                   </div>

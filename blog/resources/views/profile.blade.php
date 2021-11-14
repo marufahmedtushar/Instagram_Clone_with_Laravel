@@ -102,7 +102,14 @@
                             <span class= 'dotimg'><img class="postmodalimg align-items-start"  src="{{asset('images/dot1.png')}}" data-toggle="modal" data-target="#ModalCenter"></span>
                           </div>
                         </div>
-                        <div class="modalimgcmt">{{$post->post_title}}</div>
+                        <div class="postmodal-body" style="height: 300px;  padding: 5px; display: flex;">
+                          <div class="modalimgcmt">{{$post->post_title}}</div>
+                        </div>
+
+                        <div class="postmodal-footer" style="height: 122px; padding: 5px;">
+                          <div class="modalimgcmt">{{$post->post_title}}</div>
+                        </div>
+                        
                       
 
 

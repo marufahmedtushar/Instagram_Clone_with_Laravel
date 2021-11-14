@@ -1,5 +1,10 @@
 @extends('layouts.master')
 @section('content')
+@section('link')
+	
+
+@endsection
+
 @foreach($users as $user)
 @if(Auth::user()->name == $user->name)
 @if (session('status'))
@@ -166,7 +171,14 @@
 				<button type="submit" class="btn btn-primary">submit</button>
 			</form>
 		</div>
-		<div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">treataretear</div>
+		<div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">treataretear
+			<button id="On">Switch on</button>
+                
+                <img id="bulb">
+                
+                <button id="Off">Switch off</button>
+                
+		</div>
 	</div>
 </div>
 
@@ -200,10 +212,35 @@
 </footer>
 @endsection
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
 <script>
 $(function () {
 $('#myTab li:last-child a').tab('show')
 })
+
+
+
+
+//Initialize the default bulb
+document.getElementById('bulb').src='img/bulboff.gif';
+        
+//Grab on the switch on btn and add an event(click)
+document.getElementById('On').addEventListener('click',switchOn);
+        
+//Grab on the switch off btn and add an event(click)
+document.getElementById('Off').addEventListener('click',switchOff);
+        
+//Runs when the switch on button is clicked
+function switchOn(){
+    let On = document.getElementById('bulb');
+    On.src = 'images/bulbon.jpg';
+}
+
+//Runs when the switch off button is clicked
+function switchOff(){
+    let Off = document.getElementById('bulb');
+    Off.src = 'images/bulboff.jpg';
+}
 </script>
 
 @endsection

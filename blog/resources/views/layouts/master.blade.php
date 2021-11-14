@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -19,10 +20,31 @@
         
         <img src="{{asset('images/ihome.png')}}" class="icon">
         <img src="{{asset('images/im.png')}}" class="icon">
+        <img src="{{asset('images/crt.png')}}" class="icon" data-toggle="modal" data-target="#staticBackdrop">
         <img src="{{asset('images/iee.png')}}" class="icon">
         <img src="{{asset('images/f.png')}}" class="icon">
         
-        
+    
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
         
         <div class="btn-group" role="group">
           @guest
@@ -100,6 +122,7 @@
   element.classList.toggle("dark-mode");
   }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
   @yield('js')
   
   

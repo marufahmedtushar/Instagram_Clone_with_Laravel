@@ -11,4 +11,10 @@ class Post extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function reacts()
+    {
+        return $this->hasMany('App\React');
+    }
+    
 }
