@@ -15,8 +15,7 @@ class CreateReactsTable extends Migration
     {
         Schema::create('reacts', function (Blueprint $table) {
             $table->id();
-            $table->string('react_no');
-            $table->string('react_value');
+            $table->string('react_value')->default('0')->nullable();
             $table->timestamps();
         });
         Schema::table('reacts', function (Blueprint $table) {

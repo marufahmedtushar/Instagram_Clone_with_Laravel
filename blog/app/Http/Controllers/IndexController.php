@@ -126,29 +126,29 @@ class IndexController extends Controller
 
     }
 
-    public function react(Request $request){
+    public function react(Request $request,$id){
 
         
 
 
-        $react = new React();
+        $react = React::find($id);
         $react-> user_id = Auth::id();
         $react->post_id = $request->input('post_id');
 
-         #Store Unique Order/Product Number
-        $unique_no = React::orderBy('id', 'DESC')->pluck('id')->first();
-        if($unique_no == null or $unique_no == ""){
-        #If Table is Empty
-        $unique_no = 1;
-        }
-        else{
-        #If Table has Already some Data
-        $unique_no = $unique_no + 1;
-      }
+      //    #Store Unique Order/Product Number
+      //   $unique_no = React::orderBy('id', 'DESC')->pluck('id')->first();
+      //   if($unique_no == null or $unique_no == ""){
+      //   #If Table is Empty
+      //   $unique_no = 1;
+      //   }
+      //   else{
+      //   #If Table has Already some Data
+      //   $unique_no = $unique_no + 1;
+      // }
       
-        $react->react_no = 'REACT-0000'.$unique_no;
+      //   $react->react_no = 'REACT-0000'.$unique_no;
         $react->react_value = $request->input('react_value');
-        $react->save();
+        $react->update();
         return back()->with('status','you reacted');
     }
 

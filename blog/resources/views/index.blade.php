@@ -162,7 +162,7 @@
                 <div class='footer'>
                   
                   <div class='react'>
-                    <form action="/react" method="POST">
+                    <form action="/react/{{$post->id}}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('PUT') }}
                       
@@ -171,6 +171,7 @@
 
                          @if($post->react_value == 1)
 
+                        
                         <input type="hidden" name="post_id" value="{{$post->id}}">
                         <input type="checkbox" onChange="this.form.submit()" id="react_value{{$post->id}}" name="react_value" value="0" {{ $post->react_value == 1 ? 'checked' : '' }}/>
                          @elseif($post->react_value == 0)
